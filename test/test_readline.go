@@ -1,8 +1,8 @@
 package main
 
 import (
-	".."
 	"fmt"
+	"github.com/pm5/go-editline"
 )
 
 func main() {

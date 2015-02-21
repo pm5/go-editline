@@ -2,12 +2,16 @@
 
 ## Usage
 
-```golang
+        $ go get github.com/pm5/go-editline
+
+Then
+
+```Go
 package main
 
 import (
-	"github.com/pm5/go-editline"
 	"fmt"
+	"github.com/pm5/go-editline"
 )
 
 func main() {
