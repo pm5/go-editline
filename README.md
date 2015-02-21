@@ -1,6 +1,6 @@
 # Go-bindings for C editline library
 
-[Editline][] is a line editing lbrary for UNIX.  It is call compatible with GNU readline, but is a fraction of the size and has few features.
+[Editline][] is a line editing library for UNIX.  It is call compatible with GNU readline, but is a fraction of the size and has fewer features.
 
 [editline]: https://github.com/troglobit/editline
 
