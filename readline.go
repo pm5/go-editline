@@ -7,11 +7,16 @@ package editline
 */
 import "C"
 import "unsafe"
+import "io"
 
-func ReadLine(p string) string {
+func ReadLine(p string) (string, error) {
 	cp := C.CString(p)
 	defer C.free(unsafe.Pointer(cp))
-	return C.GoString(C.readline(cp))
+	line := C.readline(cp)
+	if line == nil {
+		return "", io.EOF
+	}
+	return C.GoString(line), nil
 }
 
 func AddHistory(l string) {
