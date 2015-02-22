@@ -25,4 +25,9 @@ func main() {
 		fmt.Println(line)
 		editline.AddHistory(line)
 	}
+	err := editline.WriteHistory("history.test")
+	if err != nil {
+		fmt.Print(err)
+		os.Exit(-1)
+	}
 }

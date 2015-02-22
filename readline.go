@@ -34,7 +34,17 @@ func ReadHistory(filename string) error {
 	defer C.free(unsafe.Pointer(cfn))
 	r := C.read_history(cfn)
 	if r != 0 {
-		return fmt.Errorf("Cannot read history file `%s`: %s\n", filename, C.GoString(C.strerror(r)))
+		return fmt.Errorf("Cannot read from history file `%s`: %s\n", filename, C.GoString(C.strerror(r)))
+	}
+	return nil
+}
+
+func WriteHistory(filename string) error {
+	cfn := C.CString(filename)
+	defer C.free(unsafe.Pointer(cfn))
+	r := C.write_history(cfn)
+	if r != 0 {
+		return fmt.Errorf("Cannot write to history `%s`: %s\n", filename, C.GoString(C.strerror(r)))
 	}
 	return nil
 }
