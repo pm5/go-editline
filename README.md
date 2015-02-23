@@ -8,7 +8,7 @@
 
         $ go get github.com/pm5/go-editline
 
-Then
+You also need C editline library installed.  Then
 
 ```Go
 package main
